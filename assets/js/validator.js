@@ -12,9 +12,10 @@ function Validator(options) {
         var errorElement = inputElement.parentElement.querySelector(options.errorSelector)
         var errorrMessage;
 
+
         var rules = selectorRules[rule.selector]
 
-
+        //lặp qua và thực hiện các rule, có lỗi thì sẽ dừng lại ở rule đó
         for (var rule in rules) {
             errorrMessage = rules[rule](inputElement.value)
             if (errorrMessage) break;
